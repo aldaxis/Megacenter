@@ -1,0 +1,13 @@
+/bootstrap/compiled.php
+/vendor
+/node_modules
+/public/assets/css/layout.min.css
+/public/assets/js/compiled.js
+/public/assets/admin/css/layout.min.css
+/public/assets/admin/js/compiled.js
+composer.phar
+composer.lock
+.env.*.php
+.env.php
+.DS_Store
+Thumbs.db

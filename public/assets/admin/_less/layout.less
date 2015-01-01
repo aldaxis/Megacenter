@@ -1,0 +1,103 @@
+/* 
+ *   Layout Painel Administrativo
+ * 
+ * - Author:    Felipe R. Alcântara
+ */
+
+
+/* ==================================================
+ *  Import Bootstrap core
+ *	Version: 3.3.1
+ * ================================================== */
+@import "bootstrap/bootstrap.less";
+
+
+/* ==================================================
+ * Variables
+ * ================================================== */
+@imagesPath : "../images";
+
+
+/* ==================================================
+ * Global Styles
+ * ================================================== */
+*{
+    font-family: 'Istok Web', sans-serif;
+    outline: none;
+}
+
+.container-fluid {
+   padding-left: 0;
+   padding-right: 0;
+   margin: 0;
+}
+
+.wrapper {
+    overflow: hidden;
+    .page {
+        position: relative;  
+    }
+}
+
+/* ==================================================
+ * Formulário de login
+ * ================================================== */
+.form-signin {
+	max-width: 330px;
+	padding: 15px;
+	margin: 0 auto;
+	margin-top: 100px;
+    .form-signin-heading, .checkbox {
+        margin-bottom: 10px;
+    }
+    .checkbox {
+        padding-left: 20px;
+        font-size: 13px;
+        line-height: 21px;
+        font-weight: normal;
+    }
+    .form-control {
+        position: relative;
+        font-size: 16px;
+        height: auto;
+        padding: 10px;
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+        &:focus {
+            z-index: 2;
+        }
+    }
+    .input-group.password {
+        margin-top: 10px;
+    }
+    .form-actions {
+        width: 100%;
+        float: left;
+        margin-top: 15px;
+    }
+    .btn-submit {
+        margin-top: 3px;
+        width: 120px;
+    }
+    .forgot-password {
+        width: 100%;
+        float: left;
+        margin-top: 15px;
+        font-size: 13px;
+        text-align: center;
+    }
+}
+
+/* Alerts */
+.errors{
+	max-width: 400px;
+	position: relative;
+	margin: 0 auto;
+}
+
+.alert{
+	width: 100%;
+	position: absolute;
+	top: 20px;
+}

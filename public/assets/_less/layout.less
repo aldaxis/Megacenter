@@ -1,0 +1,1220 @@
+/* 
+ *   Mega center Website Layout
+ * 
+ * - Author:    Felipe R. Alcântara
+ */
+
+/* ==================================================
+ * Includes
+ * ================================================== */
+
+/* ==================================================
+ *  Import Bootstrap core
+ *	Version: 3.3.1
+ * ================================================== */
+@import "bootstrap/bootstrap.less";
+
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+//html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+@font-face {
+	font-family: 'Harabara';
+	src: url('../fonts/Harabara.eot');
+	src: local('Harabara'), url('../fonts/Harabara.woff') format('woff'), url('../fonts/Harabara.ttf') format('truetype');
+}
+
+
+/* ==================================================
+ * Variáveis globais
+ * ================================================== */
+@green      : #bed62f;
+@lightgreen : #dcee47;
+@blue       : #0072bc;
+@darkblue   : #0a568e;
+@lightblue  : #009ed4;
+
+
+/* ==================================================
+ * Global styles
+ * ================================================== */
+
+* {
+    outline: none;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    min-width: 1200px;
+}
+
+.body {
+    min-width: 1200px;
+}
+
+.wrapper {
+    width: 100%;
+    min-width: 1200px;
+	height: auto;
+	min-height: 100%;
+	position: relative;
+    overflow: hidden;
+    .strip-top{
+        width: 100%;
+        height: 10px;
+        background: @green;
+    }
+    .main-header {
+        position: relative;
+        background: url('../../images/shadow1.png') no-repeat center bottom;
+        > .container {
+            padding-bottom: 27px;
+        }
+        .logo {
+            margin-top: 26px;
+        }
+        .menu {
+            width: auto;
+            position: relative;
+            float: right;
+            margin: 64px 17px 0 0;
+            padding: 0;
+            list-style-type: none;
+            li {
+                height: 27px;
+                position: relative;
+                float: left;
+                margin-right: 32px;
+                &:last-child {
+                    margin-right: 0;
+                }
+                a {
+                    text-decoration: none;
+                    font-family: Arial;
+                    font-weight: bold;
+                    font-size: 16px;
+                    color: @blue;
+                    img {
+                        vertical-align: middle;
+                        padding-right: 8px;
+                    } 
+                }
+                .active {
+                    width: 122px;
+                    height: 33px;
+                    position: absolute;
+                    top: -75px;
+                    left: 50%;
+                    margin-left: -61px;
+                    background: url('../../images/menu_active.png') no-repeat;
+                }
+            }
+        }
+    }
+    .container {
+        width: 1200px;
+        position: relative;
+        margin: 0 auto;
+        padding: 0;
+    }
+    > .page {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        position: relative;
+        padding-bottom: 205px;
+        .content {
+            width: 100%;
+            margin: 2px 0 0 0;
+            background: url('../../images/shadow2.png') no-repeat center top;
+            padding-bottom: 60px;
+            > .container {
+                min-height: 451px;
+                border: 1px dashed #000;
+            }
+        }
+    }
+}
+
+
+/* ==================================================
+ * Rodapé
+ * ================================================== */
+.footer {
+    width: 100%;
+    height: 205px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: @green;
+    .strip-1 {  
+        background: @darkblue;
+        > .container {
+            height: 98px;
+        }
+        .brand {
+            width: 146px;
+            height: 145px;
+            position: absolute;
+            top: 24px;
+            left: 415px;
+            background: url('../../images/footer01.png') no-repeat;
+        }
+    }
+    .strip-2 {
+        background: @blue;
+        > .container {
+            height: 90px;
+        }
+    }
+    .menu {
+        width: auto;
+        position: relative;
+        float: left;
+        margin: 38px 0 0 34px;
+        padding: 0;
+        list-style-type: none;
+        li {
+            height: 12px;
+            float: left;
+            margin-right: 0;
+            a {
+                height: 12px;
+                display: inline-block;
+                padding: 0 7px;
+                text-decoration: none;
+                font-family: Arial;
+                font-size: 13px;
+                line-height: 12px;
+                color: #fff;
+                border-right: 1px solid #fff;
+            }
+            &:first-child a {
+                padding-left: 0;
+            }
+            &:last-child a {
+                border-right: 0;
+            }
+        }
+    }
+    .phone {
+        height: 24px;
+        float: right;
+        margin: 36px 34px 0 0;
+        padding: 0 0 0 31px;
+        background: url('../../images/icon_phone_small.png') no-repeat;
+        span {
+            display: inline-block;
+            margin: 3px 0 0 0;
+            font-family: Arial;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+        }
+    }
+    .copyright {
+        height: 39px;
+        float: left;
+        margin: 26px 0 0 34px;
+        padding: 0 0 0 54px;
+        background: url('../../images/logo_mini.png') no-repeat;
+        span {
+            display: inline-block;
+            margin: 12px 0 0 0;
+            font-family: Arial;
+            font-size: 13px;     
+            color: #fff;
+        }
+    }
+    .aldaxis {
+        height: 24px;
+        float: right;
+        margin: 33px 34px 0 0;
+        padding: 5px 32px 0 0;
+        font-family: Arial;
+        font-size: 11px;
+        color: #e9f0f7;
+        text-decoration: none;
+        background: url('../../images/aldaxis.png') no-repeat center right;
+    }
+}
+
+
+/* ==================================================
+ * Banner
+ * ================================================== */
+.banner {
+   width: 100%;
+   margin: 2px 0 0 0;
+   background: @lightblue;
+   > .container {
+        height: 212px;
+       .art-brand {
+            width: 408px;
+            height: 384px;
+            position: absolute;
+            right: 0;
+            top: 20px;
+            background: url('../../images/brand01.png') no-repeat;
+       }
+   }
+   div.title {
+        float: left;
+        margin: 70px 0 0 0;
+        img {
+            float: left;
+        }
+        span {
+            float: left;
+            margin: 0 0 0 25px;
+            font-family: 'Harabara';
+            font-size: 53px;
+            letter-spacing: 3px;
+            color: #fff;
+        }
+   }
+}
+
+
+/* ==================================================
+ * Paginação
+ * ================================================== */
+.box-pagination {
+    width: 100%;
+    float: left;
+    text-align: center;
+    .pagination {
+        height: 20px;
+        li {
+            height: 24px;
+            display: table-cell;
+            vertical-align: middle;
+            padding: 0 2px;
+            a, span {
+                padding: 2px 8px;
+                border-radius: 0;
+                border: 0;
+                color: @blue;
+                font-size: 15px;
+                font-weight: bold;
+                &:hover {
+                    background: #ebf6fb;
+                }
+            }
+            &.active {
+                a, span {          
+                    background: #c7eafb;
+                    &:hover {
+                        color: @blue;
+                    }
+                }
+            }
+            &:nth-child(odd){
+
+            }
+            &:first-child, &:last-child {
+                a, span {
+                    font-size: 30px;
+                    color: @green;
+                    border: 0;
+                    padding: 1px 8px 5px 8px;
+                    background: none;
+                    &:hover {
+                        background: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==================================================
+ * Produtos
+ * ================================================== */
+@grutterWidth : 18px;
+.produtos {
+    width: 105%;
+    position: relative;
+    float: left;
+    padding: 0;
+    list-style-type: none;
+    .item {
+        width: 172px;
+        height: 218px;
+        position: relative;
+        float: left;
+        margin: 0 @grutterWidth 27px 0;
+        a {
+            text-decoration: none;
+        }
+        .photo {
+            width: 172px;
+            height: 172px;
+            float: left;
+            border: 1px solid #ededed;
+        }
+        .nome {
+            float: left;
+            margin: 9px 0 0 3px;
+            font-family: Arial;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 16px;
+            color: @blue;
+            span {
+                font-size: 12px;
+                font-weight: normal;
+            }
+        }
+    }
+}
+
+
+/* ==================================================
+ * Página home
+ * ================================================== */
+.pg-home {
+    .banner {
+        background: #e1f4fd;
+        > .container {
+            height: 393px;
+            background: url('../../images/banner_home.png') no-repeat right center;
+            .art-brand {
+                width: 428px;
+                height: 297px;
+                position: absolute;
+                right: 0;
+                top: 363px;
+                background: url('../../images/brand03.png') no-repeat;
+            }
+        }
+        .brand-box {
+            width: 407px;
+            height: 431px;
+            position: absolute;
+            left: 98px;
+            top: -20px;
+            background: url('../../images/brand_box.png') no-repeat;
+            .title {
+                margin: 85px 0 0 -35px;
+                font-family: 'Harabara';
+                font-size: 50px;
+                color: @darkblue;
+                letter-spacing: 2px;
+                line-height: 47px;
+            }
+            .text {
+                width: 238px;
+                float: right;
+                margin: 22px 10px 0 0;
+                font-family: Arial;
+                font-size: 14px;
+                line-height: 18px;
+                color: @darkblue;
+            }
+            .saiba-mais {
+                text-decoration: none;
+                font-family: Arial;
+                font-size: 14px;
+                color: @blue;
+                font-weight: bold;
+                &:hover {
+                    color: @darkblue;
+                }
+            }
+        }
+    }
+    .box-produtos {
+        width: 100%;
+        position: relative;
+        float: left;
+        margin: 30px 0 0 0;
+        .produtos {
+            width: 748px + @grutterWidth;
+            margin: 14px 0 0 0;
+        }
+        .head-label {
+            font-family: 'Harabara';
+            font-size: 39px;
+            color: @blue;
+            margin: 0;
+        }
+        .confira-mais {
+            width: 112px;
+            float: left;
+            margin: 25px 0 0 20px;
+            padding: 73px 0 0 28px;
+            font-family: 'Harabara';
+            line-height: 24px;
+            text-decoration: none;
+            background: url('../../images/plus.png') no-repeat left top;
+            .text1 {
+                font-size: 26px;
+                color: @blue;
+            }
+            .text2 {
+                font-size: 37px;
+                color: @green;
+            }
+        }
+    }
+    .grandes-marcas {
+        width: 100%;
+        position: relative;
+        float: left;
+        margin: 45px 0 0 0;
+        .head-label {
+            font-family: 'Harabara';
+            font-size: 39px;
+            color: @blue;
+            margin: 0;
+        }
+    }
+    .box-marcas {
+        width: 100%;
+        height: 116px;
+        position: relative;
+        float: left;
+        margin: 30px 0 0 0;
+        ul { 
+            height: 116px;
+            display: block;
+            margin: 0 auto;
+            padding: 0;
+            list-style-type: none;
+            li {
+                width: 220px;
+                height: 116px;
+                position: relative;
+                float: left;
+                padding: 0 10px;
+                .marca {
+                    width: 200px;
+                    height: 116px;
+                    display: table-cell;
+                    text-align: center;
+                    vertical-align: middle;
+                    img {
+                       display: inline-block;
+                    }
+                }
+            }
+        }
+        .btn-left, .btn-right {
+            width: 38px;
+            height: 60px;
+            position: absolute;
+            top: 25px;
+            display: block;
+            border: 0;
+            cursor: pointer;
+        }
+        .btn-left {
+            left: -10px;
+            background: url('../../images/arrow_left.png') no-repeat;
+        }
+        .btn-right {
+            right: -10px;
+            background: url('../../images/arrow_right.png') no-repeat;
+        }
+    }
+}
+
+
+/* ==================================================
+ * Página empresa
+ * ================================================== */
+.pg-empresa {
+    .texto {
+        width: 485px;
+        float: left;
+        margin: 50px 0 0 0;
+        p {
+            font-family: Arial;
+            font-size: 15px;
+            color: @blue;
+            line-height: 23px;
+            margin: 0 0 25px 0;
+        }
+    }
+    .mulher {
+        width: 275px;
+        height: 612px;
+        position: absolute;
+        top: 50px;
+        right: 380px;
+        background: url('../../images/empresa01.png') no-repeat;
+    }
+    .grandes-marcas {
+        width: 260px;
+        position: relative;
+        float: right;
+        margin: 132px 85px 0 0;
+        .head-label {
+            font-family: 'Harabara';
+            font-size: 26px;
+            color: @green;
+            line-height: 21px;
+            span {
+                font-size: 39px;
+                color: @blue; 
+            }
+        }
+    }
+    .box-marcas {
+        width: 222px;
+        height: 116px;
+        position: relative;
+        float: left;
+        margin: 36px 0 0 5px;
+        overflow: hidden;
+        ul { 
+            height: 116px;
+            display: block;
+            margin: 0 auto;
+            list-style-type: none;
+            overflow: hidden;
+            padding: 0;
+            li {
+                width: 220px;
+                height: 116px;
+                position: relative;
+                float: left;
+                padding: 0 10px;
+                .marca {
+                    width: 200px;
+                    height: 116px;
+                    display: table-cell;
+                    text-align: center;
+                    vertical-align: middle;
+                    img {
+                       display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* ==================================================
+ * Página produtos
+ * ================================================== */
+.pg-produtos {
+    .container {
+        > .left-col {
+            width: 190px;
+            position: relative;
+            float: left;
+        }
+        > .right-col {
+            width: 943px;
+            position: relative;
+            float: right;
+        }
+    }
+    .banner {
+        .grandes-marcas {
+            width: 515px;
+            height: 214px;
+            position: absolute;
+            top: -1px;
+            right: -47px;
+            background: url('../../images/grandes_marcas.png') no-repeat;
+            .head-label {
+                font-family: 'Harabara';
+                font-size: 29px;
+                line-height: 25px;
+                color: #fff;
+                margin: 80px 0 0 -88px;
+            }
+        }
+    }
+    .categorias {
+        width: 100%;
+        float: left;
+        margin: 18px 0 0 0;
+        .label {
+            font-family: Arial;
+            font-size: 25px;
+            font-weight: bold;
+            color: @green;
+            margin: 0 0 0 11px;
+            padding: 0;
+        }
+        .menu {
+            width: 100%;
+            float: left;
+            display: block;
+            margin: 23px 0 0 0;
+            padding: 0 0 0 5px;
+            list-style: none;
+            > li {
+                width: 100%;
+                position: relative;
+                padding: 6px 8px;
+                border-bottom: 2px solid #e7f6fd;
+                &.active > a {
+                    font-weight: bold;
+                }
+                > a {
+                    font-family: Arial;
+                    font-size: 15px;
+                    color: @blue;
+                    text-decoration: none;
+                }
+                ul {
+                    padding: 3px 0 0 12px;
+                    list-style: none;
+                    display: none;
+                    li {
+                        position: relative;
+                        padding: 6px 0 6px 8px;
+                        border-bottom: 2px solid #e7f6fd;
+                        a {
+                            font-family: Arial;
+                            font-size: 15px;
+                            color: @blue;
+                            text-decoration: none;
+                        }
+                        &:last-child {
+                            border: 0;
+                        }
+                        &.active > a {
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+            .caret {
+                position: absolute;
+                top: 16px;
+                left: -8px;
+            } 
+        }
+    }
+    .box-produtos {
+        width: 935px;
+        float: right;
+        margin: 10px 0 0 0;
+    }
+    .busca {
+        width: 943px;
+        height: 133px;
+        position: relative;
+        float: right;
+        margin: -14px 0 0 0;
+        background: url('../../images/busca.png') no-repeat;
+        input {
+            width: 411px;
+            height: 46px;
+            position: absolute;
+            top: 19px;
+            left: 8px;
+            padding: 0 60px;
+            border: 0;
+            font-family: Arial;
+            font-size: 16px;
+            z-index: 1000;
+            background: url('../../images/input_busca.png') no-repeat;
+        }
+        .btn-buscar {
+            width: 156px;
+            height: 39px;
+            position: absolute;
+            top: 23px;
+            left: 405px;
+            display: block;
+            border: 0;
+            background: url('../../images/btn_buscar.png') no-repeat;
+            &:hover {
+                cursor: pointer;
+                background: url('../../images/btn_buscar1.png') no-repeat;
+            }
+        }
+    }
+    .box-produto {
+        width: 100%;
+        position: relative;
+        float: left;
+        margin: -20px 0 0 0;
+        border: 1px dashed #000;
+        .categorias {
+            width: 100%;
+            float: left;
+            margin: 0 0 38px 0;
+            .breadcrumb {
+                margin: 0;
+                padding: 0;
+                background: none;
+                li {
+                    color: @green;
+                    font-size: 22px;
+                    &.active {
+                        color: @blue;
+                    }
+                    a {
+                        color: @green;
+                    }
+                }
+            }
+        }
+        .left-col {
+            width: 680px;
+            float: left;
+            .foto {
+                width: 328px;
+                height: 328px;
+                float: left;
+                border: 1px solid #ededed;
+            }
+            .info {
+                width: 310px;
+                height: 328px;
+                position: relative;
+                float: left;
+                .nome {
+                    font-family: Arial;
+                    font-size: 22px;
+                    font-weight: bold;
+                    line-height: 22px;
+                    color: @blue;
+                    padding: 0;
+                    margin: 3px 0 0 15px;
+                    span {
+                        font-size: 16px;
+                        font-weight: normal;
+                    }
+                }
+                .descricao {
+                    width: 100%;
+                    .head-title {
+                        margin: 30px 0 0 15px;
+                        font-family: Arial;
+                        font-size: 16px;
+                        font-weight: bold;
+                        color: @blue;
+                    }
+                    .text {
+                        margin: 2px 0 0 15px;
+                        font-family: Arial;
+                        font-size: 14px;
+                        line-height: 18px;
+                        color: @blue;
+                    }
+                }
+                .orcamento {
+                    width: 310px;
+                    height: 124px;
+                    position: absolute;
+                    right: 0;
+                    bottom: 27px;
+                    background: url('../../images/orcamento.png') no-repeat;
+                    input {
+                        width: 80px;
+                        height: 32px;
+                        padding: 0 10px;
+                        position: absolute;
+                        top: 33px;
+                        right: 32px;
+                        border: 0;
+                        border-radius: 6px;
+                    }
+                    .adicionar {
+                        width: 227px;
+                        height: 54px;
+                        display: block;
+                        position: absolute;
+                        top: 88px;
+                        left: 0;
+                        border: 0;
+                        background: url('../../images/btn_adicionar.png') no-repeat;
+                        &:hover {
+                            cursor: pointer;
+                            background: url('../../images/btn_adicionar1.png') no-repeat;
+                        }
+                    }
+                }
+            }
+        }
+        .right-col {
+            width: 202px;
+            height: 328px;
+            float: right;
+            .lista-orcamento {
+                width: 100%;
+                min-height: 305px;
+                position: relative;
+                float: left;
+                padding: 0 0 32px 0;
+                .title {
+                    width: 100%;
+                    height: 72px;
+                    float: left;
+                    border-bottom: 1px solid @green;
+                    background: url('../../images/icon_lista_small.png') no-repeat 15px top;
+                    span {
+                        font-family: Arial;
+                        font-size: 18px;
+                        font-weight: bold;
+                        line-height: 18px;
+                        color: @blue;
+                        display: block;
+                        margin: 10px 0 0 90px;
+                    }
+                }
+                .itens {
+                    width: 100%;
+                    height: 206px;
+                    float: left;
+                    display: block;
+                    list-style: none;
+                    padding: 0;
+                    overflow: hidden;
+                    li {
+                        width: 100%;
+                        height: 103px;
+                        position: relative;
+                        padding: 0;
+                        border-top: 1px solid @green;
+                        &:first-child {
+                            border: 0;
+                        }
+                        &.empty {
+                            font-family: Arial;
+                            font-size: 18px;
+                            color: #d7d7d7;
+                            text-align: center;
+                            line-height: 20px;
+                            padding: 75px 20px;
+                        }
+                        .box {
+                            width: 100%;
+                            position: relative;
+                            float: left;
+                            padding: 14px 0 5px 48px;
+                        }
+                        .btn-remover {
+                            width: 23px;
+                            height: 23px;
+                            position: absolute;
+                            top: 11px;
+                            left: 16px;
+                            border: 0;
+                            background: url('../../images/btn_remover.png') no-repeat;
+                            &:hover {
+                                cursor: pointer;
+                            }
+                        }
+                        .nome, .quantidade {
+                            font-family: Arial;
+                            font-size: 16px;
+                            font-weight: bold;
+                            line-height: 17px;
+                            color: @blue;
+                            float: left;
+                            span {
+                                font-size: 14px;
+                                font-weight: normal;
+                            }
+                        }
+                        .nome {
+                            width: 100%;
+                        }
+                        .quantidade {
+                            padding: 5px 10px;
+                            margin: -6px 0 0 -10px;
+                        }
+                    }
+                }
+                .ver-lista {
+                    width: 210px;
+                    height: 41px;
+                    display: block;
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    background: url('../../images/btn_ver_lista.png') no-repeat;
+                    &:hover {
+                        background: url('../../images/btn_ver_lista1.png') no-repeat;
+                    }
+                }
+            }
+        }
+        .outros-produtos {
+            width: 100%;
+            float: left;
+            margin: 42px 0 0 0;
+            .head-title {
+                font-family: Arial;
+                font-size: 22px;
+                font-weight: bold;
+                color: @green;
+                padding: 0;
+                margin: 0 0 0 5px;
+            }
+            .produtos {
+                margin: 17px 0 0 0;
+            }
+        }
+    }
+}
+
+
+/* ==================================================
+ * Página de contato
+ * ================================================== */
+.pg-contato {
+    //
+}
+
+
+/* ==================================================
+ * Página meu orçamento
+ * ================================================== */
+.pg-orcamento {
+    .banner {
+        background: #c6dc35;
+        .strip {
+            width: 100%;
+            height: 42px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #dcee47;
+        }
+        div.title {
+            margin-top: 80px;
+            span {
+                padding: 5px 0 0 0;
+                color: @blue;
+            }
+        }
+        .art-brand {
+            width: 316px;
+            height: 298px;
+            position: absolute;
+            right: 0;
+            top: 63px;
+            background: url('../../images/brand02.png') no-repeat;
+        }
+    }
+    .subtitle {
+        float: left;
+        margin: 58px 0 0 13px;
+        img {
+            float: left;
+        }
+        span {
+            float: left;
+            margin: 19px 0 0 12px;
+            font-family: Arial;
+            font-size: 22px;
+            font-weight: bold;
+            color: @blue;
+        }
+    }
+    .success {
+        width: 100%;
+        float: left;
+        padding: 75px 0;
+        text-align: center;
+        .text-success {
+            font-size: 22px;
+            line-height: 25px;
+        }
+    }
+    .lista-orcamento {
+        width: 100%;
+        position: relative;
+        float: left;
+        margin: 30px 0 0 0;
+        padding: 0;
+        .itens {
+            width: 100%;
+            float: left;
+            display: block;
+            margin: 0;
+            padding: 0 0 12px 13px;
+            list-style: none;
+            li {
+                width: 240px;
+                height: 74px;
+                position: relative;
+                float: left;
+                margin: 0 52px 30px 0;
+                &.empty {
+                    width: 100%;
+                    font-family: Arial;
+                    font-size: 22px;
+                    color: #d7d7d7;
+                    text-align: center;
+                    line-height: 20px;
+                    padding: 75px 20px;
+                }
+                .foto {
+                    width: 74px;
+                    height: 74px;
+                    float: left;
+                    border: 1px solid #ededed;
+                }
+                .info {
+                    width: 164px;
+                    float: left;
+                    padding: 6px 0 0 13px;  
+                }
+                .btn-remover {
+                    width: 23px;
+                    height: 23px;
+                    position: absolute;
+                    top: 25px;
+                    left: -12px;
+                    border: 0;
+                    background: url('../../images/btn_remover.png') no-repeat;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+                .nome, .quantidade {
+                    font-family: Arial;
+                    font-size: 16px;
+                    font-weight: bold;
+                    line-height: 17px;
+                    color: @blue;
+                    float: left;
+                    span {
+                        font-size: 14px;
+                        font-weight: normal;
+                    }
+                }
+                .nome {
+                    width: 100%;
+                }
+                .quantidade {
+                    padding: 5px 10px;
+                    margin: -6px 0 0 -10px;
+                }
+            }
+        }
+        .box-pagination {
+            .pagination {
+                padding: 0;
+                margin: 0 0 30px 0;
+            }
+        }
+    }
+    .envio-orcamento {
+        width: 100%;
+        position: relative;
+        float: left;
+        padding: 0 0 30px 0;
+        .shadow {
+            width: 1527px;
+            height: 86px;
+            position: absolute;
+            top: 0;
+            left: -164px;
+            background: url('../../images/shadow2.png') no-repeat;
+        }
+        .header {
+            width: 1348px;
+            height: 143px;
+            position: relative;
+            float: left;
+            padding: 0 74px;
+            margin: 45px 0 0 -74px;
+            background: url('../../images/bg_header_orcamento.png') no-repeat center;
+            .title {
+                float: left;
+                margin: 35px 0 0 13px;
+                img {
+                    float: left;
+                }
+                span {
+                    float: left;
+                    margin: 19px 0 0 14px;
+                    font-family: Arial;
+                    font-size: 20px;
+                    font-weight: bold;
+                    line-height: 22px;
+                    color: @blue;
+                }
+            }
+            .btn-action {
+                width: 310px;
+                height: 76px;
+                display: block;
+                position: absolute;
+                top: 36px;
+                border: 0;
+                background: none;
+                &.btn-jasou {
+                    right: 453px;
+                    background: url('../../images/btn_ja_sou.png') no-repeat;
+                }
+                &.btn-naosou {
+                    right: 126px;
+                    background: url('../../images/btn_nao_sou.png') no-repeat;
+                }
+            }
+        }
+    }
+    .form-box {
+        position: relative;
+        float: left;
+        display: none;
+        padding: 40px 12px 0 12px;
+        .form-text {
+            width: 100%;
+            float: left;
+            margin: 0 0 20px 0;
+            font-family: Arial;
+            font-weight: bold;
+            font-size: 20px;
+            color: @blue;
+        }
+        .col {
+            width: 360px;
+            position: relative;
+            float: left;
+            margin: 0 43px 0 0;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        .form-control {
+            height: 39px;
+            border: 1px solid @blue;
+            border-radius: 7px;
+            font-family: Arial;
+            font-size: 16px;
+            color: @blue;
+            &.textarea {
+                height: 145px;
+                resize: none;
+            }
+        }
+        .row {
+            .input-col {
+                &:first-child {
+                    padding-right: 7px;
+                }
+                &:last-child {
+                    padding-left: 7px;
+                }
+            }
+        }
+        span.error {
+            padding: 0 0 0 3px;
+            font-size: 12px;
+        }
+        .btn-enviar {
+            width: 250px;
+            height: 47px;
+            border: 0;
+            display: block;
+            margin: -8px auto 0 auto;
+            background: url('../../images/btn_enviar_green.png') no-repeat;
+        }
+    }
+}
