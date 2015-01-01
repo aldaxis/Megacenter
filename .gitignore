@@ -1,6 +1,7 @@
 /bootstrap/compiled.php
 /vendor
 /node_modules
+/.idea
 /public/assets/css/layout.min.css
 /public/assets/js/compiled.js
 /public/assets/admin/css/layout.min.css
